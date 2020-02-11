@@ -5,7 +5,6 @@ import java.util.List;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
-import model.dao.impl.SellerDaoJDBC;
 import model.entities.Department;
 import model.entities.Seller;
 
@@ -30,7 +29,10 @@ public class Program {
 		for (Seller obj : list) {
 			System.out.println(obj);
 		}
-
+		System.out.println("\n=== TEST 4: seller inset ===");
+		Seller newSeller = new Seller(null, "Greg","greg@gamil.com",new Date(), 4000.0, department);
+		sellerDao.inset(newSeller);
+		System.out.println("Inserted! New id = "+ newSeller.getId());
 	}
 
 }
